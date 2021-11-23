@@ -1,6 +1,6 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Threading;
-using NUnit.Framework;
 using WomenStoreTests.Data;
 using WomenStoreTests.Pages;
 
@@ -8,7 +8,6 @@ namespace WomenStoreTests.Tests
 {
     class RegisterUserTest : AbstractBaseTest
     {
-
         [Test]
         public void Register()
         {
@@ -35,7 +34,7 @@ namespace WomenStoreTests.Tests
             App().Pages().CreateAnAccountPage.FillHomePhone(user.HomePhone);
             App().Pages().CreateAnAccountPage.Register();
             App().Pages().MyAccountPage.WaitPageLoaded();
-            
+
             Assert.That(App().Flow().getCurrentUrl(), Is.EqualTo(MyAccountPage.PAGE_URL));
             Thread.Sleep(2000);
             Assert.Pass();

@@ -2,12 +2,12 @@
 using NUnit.Framework;
 using System.Threading;
 using WomenStoreTests.Pages;
+[assembly:Parallelizable(ParallelScope.All)]
 
 namespace WomenStoreTests.tests
 {
     public class SignInTest : AbstractBaseTest
     {
-
         [Test]
         public void run()
         {
