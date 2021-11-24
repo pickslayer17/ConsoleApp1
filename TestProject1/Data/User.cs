@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace WomenStoreTests.Data
+namespace TestProject1.Data
 {
     public class User
     {

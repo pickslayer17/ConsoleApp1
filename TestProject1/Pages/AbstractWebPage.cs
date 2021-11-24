@@ -1,8 +1,7 @@
-﻿using System;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 
-namespace WomenStoreTests.pages
+namespace TestProject1.Pages
 {
     public abstract class AbstractWebPage
     {

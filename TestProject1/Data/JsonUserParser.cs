@@ -1,9 +1,7 @@
-﻿
-
-using System.IO;
+﻿using System.IO;
 using System.Text.Json;
 
-namespace WomenStoreTests.Data
+namespace TestProject1.Data
 {
     public class JsonUserParser : UserParser
     {

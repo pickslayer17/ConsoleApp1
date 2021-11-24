@@ -1,10 +1,11 @@
 ﻿using System;
-using NUnit.Framework;
 using System.Threading;
-using WomenStoreTests.Pages;
+using NUnit.Framework;
+using TestProject1.Pages;
+
 [assembly:Parallelizable(ParallelScope.All)]
 
-namespace WomenStoreTests.tests
+namespace TestProject1.Tests
 {
     public class SignInTest : AbstractBaseTest
     {

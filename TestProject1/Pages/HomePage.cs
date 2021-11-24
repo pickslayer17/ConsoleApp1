@@ -1,20 +1,18 @@
-﻿
-using OpenQA.Selenium;
-using System;
+﻿using OpenQA.Selenium;
 
-namespace WomenStoreTests.pages
+namespace TestProject1.Pages
 {
     public class HomePage : AbstractWebPage
     {
         public HomePage(IWebDriver driver) : base(driver) { }
 
         
-        private IWebElement signInButton => _driver.FindElement(By.XPath("//a[@class='login']"));
+        private IWebElement _signInButton => _driver.FindElement(By.XPath("//a[@class='login']"));
 
 
         public void clickSignInButton()
         {
-            signInButton.Click();
+            _signInButton.Click();
         }
     }
 }

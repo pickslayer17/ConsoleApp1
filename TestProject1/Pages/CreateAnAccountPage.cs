@@ -1,10 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using System;
-using WomenStoreTests.pages;
+using TestProject1.Tests;
 
-namespace WomenStoreTests.Pages
+namespace TestProject1.Pages
 {
     public class CreateAnAccountPage : AbstractWebPage
     {

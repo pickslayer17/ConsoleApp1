@@ -1,9 +1,7 @@
 ﻿using OpenQA.Selenium;
-using System;
-using WomenStoreTests.pages;
-using WomenStoreTests.Pages;
+using TestProject1.Pages;
 
-namespace WomenStoreTests.lib
+namespace TestProject1.Lib
 {
     public class PageLib
     {

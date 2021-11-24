@@ -1,13 +1,13 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using System;
+using TestProject1.Lib;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
-using WomenStoreTests.lib;
 
-namespace WomenStoreTests
+namespace TestProject1.Tests
 {
 
     public abstract class AbstractBaseTest : IDisposable

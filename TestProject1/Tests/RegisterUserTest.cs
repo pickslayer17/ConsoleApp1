@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
 using System.Threading;
-using WomenStoreTests.Data;
-using WomenStoreTests.Pages;
+using NUnit.Framework;
+using TestProject1.Data;
+using TestProject1.Pages;
 
-namespace WomenStoreTests.Tests
+namespace TestProject1.Tests
 {
     class RegisterUserTest : AbstractBaseTest
     {

@@ -2,7 +2,7 @@
 
 using OpenQA.Selenium;
 
-namespace WomenStoreTests.lib
+namespace TestProject1.Lib
 {
     public class AppLib
     {

@@ -1,6 +1,6 @@
 ﻿
 
-namespace WomenStoreTests.Data
+namespace TestProject1.Data
 {
     public interface UserParser
     {

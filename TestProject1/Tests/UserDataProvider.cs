@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WomenStoreTests.Data;
+﻿using TestProject1.Data;
 
-namespace WomenStoreTests.Tests
+namespace TestProject1.Tests
 {
     class UserDataProvider
     {
