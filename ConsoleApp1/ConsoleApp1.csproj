@@ -17,8 +17,4 @@
     </COMReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\WomenStoreTests\WomenStoreTests.csproj" />
-  </ItemGroup>
-
 </Project>

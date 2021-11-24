@@ -29,7 +29,6 @@ namespace TestProject1.Tests
             string expectedUrl = MyAccountPage.PAGE_URL;
 
             Assert.That(currentUrl, Is.EqualTo(expectedUrl));
-            Console.WriteLine("Finally blyad!");
 
             Thread.Sleep(1000);
             Assert.Pass();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -26,7 +27,10 @@ namespace TestProject1.Tests
         {
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             _driver = new ChromeDriver();
-            _webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(WAIT_FOR_ELEMENT_TIMEOUT));
+            _webDriverWait = new WebDriverWait(_driver, 
+                TimeSpan.FromSeconds(WAIT_FOR_ELEMENT_TIMEOUT)
+                    
+                );
             _app = new AppLib(_driver);
 
         }
