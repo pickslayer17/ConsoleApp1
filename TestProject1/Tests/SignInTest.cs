@@ -25,8 +25,8 @@ namespace TestProject1.Tests
             App().Pages().AuthenticationPage.clickSignInButton();
 
             App().Pages().MyAccountPage.WaitPageUrlEqualsToCurrent();
-            string currentUrl = App().Flow().getCurrentUrl();
-            string expectedUrl = MyAccountPage.PAGE_URL;
+            string currentUrl = App().Flow().GetCurrentUrl();
+            string expectedUrl = MyAccountPage.URL;
 
             Assert.That(currentUrl, Is.EqualTo(expectedUrl));
 

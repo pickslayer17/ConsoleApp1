@@ -5,6 +5,7 @@ namespace TestProject1.Pages
 {
     public class AuthenticationPage : AbstractWebPage
     {
+        public const string URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
         public AuthenticationPage(IWebDriver driver) : base(driver) { }
 
         private IWebElement _emailCreateAddressInput => _driver.FindElement(By.Id("email_create"));

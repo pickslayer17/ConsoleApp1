@@ -16,7 +16,7 @@ namespace TestProject1.Lib
             _driver.Navigate().GoToUrl(url);
         }
 
-         public string getCurrentUrl()
+         public string GetCurrentUrl()
          {
              return _driver.Url;
          }

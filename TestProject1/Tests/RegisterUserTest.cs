@@ -35,7 +35,7 @@ namespace TestProject1.Tests
             App().Pages().CreateAnAccountPage.Register();
             App().Pages().MyAccountPage.WaitPageLoaded();
 
-            Assert.That(App().Flow().getCurrentUrl(), Is.EqualTo(MyAccountPage.PAGE_URL));
+            Assert.That(App().Flow().GetCurrentUrl(), Is.EqualTo(MyAccountPage.URL));
             Thread.Sleep(2000);
             Assert.Pass();
 

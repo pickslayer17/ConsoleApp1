@@ -14,7 +14,6 @@ namespace TestProject1.Tests
 {
     public abstract class AbstractBaseTest : IDisposable
     {
-        public const int WAIT_FOR_ELEMENT_TIMEOUT = 30;
         private IWebDriver _driver;
         private WebDriverWait _webDriverWait;
         private AppLib _app;
