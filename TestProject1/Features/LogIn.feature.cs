@@ -110,13 +110,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("Navigate to LogIn Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Key",
-                            "Value"});
-                table1.AddRow(new string[] {
                             "Username",
-                            "qwerty10@test.ru"});
+                            "Password"});
                 table1.AddRow(new string[] {
-                            "Password",
+                            "qwerty10@test.ru",
+                            "qscwdvefb43215432"});
+                table1.AddRow(new string[] {
+                            "qwerty9@test.ru",
                             "qscwdvefb43215432"});
 #line 10
  testRunner.When("User enter UserName and Password", ((string)(null)), table1, "When ");

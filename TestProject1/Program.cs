@@ -1,19 +1,9 @@
-﻿using System;
-
-
-namespace TestProject1
+﻿namespace TestProject1
 {
-    class Program
+    internal class Program
     {
         public static void Main(string[] args)
         {
-           
-
         }
-
     }
-
-
-
-
 }

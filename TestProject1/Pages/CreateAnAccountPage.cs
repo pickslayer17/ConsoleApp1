@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using TestProject1.Tests;
 
 namespace TestProject1.Pages
 {
@@ -11,7 +10,6 @@ namespace TestProject1.Pages
         public CreateAnAccountPage(IWebDriver driver) : base(driver)
         {
         }
-
         private IWebElement _maleRadioButton => _driver.FindElement(By.Id("id_gender1"));
         private IWebElement _femaleRadioButton => _driver.FindElement(By.Id("id_gender2"));
         private IWebElement _customerFNameInput => _driver.FindElement(By.Id("customer_firstname"));
@@ -38,13 +36,9 @@ namespace TestProject1.Pages
         public void FillGender(string userGender)
         {
             if (string.Equals(userGender, "male", StringComparison.OrdinalIgnoreCase))
-            {
                 _maleRadioButton.Click();
-            }
             else
-            {
                 _femaleRadioButton.Click();
-            }
         }
 
         public void FillCustomerFirstName(string userFirstName)
@@ -67,7 +61,6 @@ namespace TestProject1.Pages
             FillDay(userDateOfBirth.Day);
             FillMonth(userDateOfBirth.Month);
             FillYear(userDateOfBirth.Year);
-
         }
 
         public void FillDay(int day)
@@ -120,6 +113,5 @@ namespace TestProject1.Pages
         {
             _registerButton.Click();
         }
-
     }
 }

@@ -1,10 +1,9 @@
 ﻿using TestProject1.Data;
 
-namespace TestProject1.Tests
+namespace TestProject1.SeleniumTests
 {
-    class UserDataProvider
+    internal class UserDataProvider
     {
-
         public static User GetUserData(UserParser userParser)
         {
             return userParser.ReadUserData();

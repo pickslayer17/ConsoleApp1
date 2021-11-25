@@ -1,12 +1,14 @@
 ﻿using OpenQA.Selenium;
-using System;
 
 namespace TestProject1.Pages
 {
     public class AuthenticationPage : AbstractWebPage
     {
         public const string URL = "http://automationpractice.com/index.php?controller=authentication&back=my-account";
-        public AuthenticationPage(IWebDriver driver) : base(driver) { }
+
+        public AuthenticationPage(IWebDriver driver) : base(driver)
+        {
+        }
 
         private IWebElement _emailCreateAddressInput => _driver.FindElement(By.Id("email_create"));
         private IWebElement _createAnAccountButton => _driver.FindElement(By.Id("SubmitCreate"));
@@ -25,12 +27,12 @@ namespace TestProject1.Pages
             _createAnAccountButton.Click();
         }
 
-        public void fillEmailAddress(String text)
+        public void fillEmailAddress(string text)
         {
             _emailInput.SendKeys(text);
         }
 
-        public void fillPassword(String text)
+        public void fillPassword(string text)
         {
             _passInput.SendKeys(text);
         }
@@ -39,7 +41,5 @@ namespace TestProject1.Pages
         {
             _signInButton.Click();
         }
-
-
     }
 }

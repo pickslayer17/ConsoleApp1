@@ -5,12 +5,7 @@ namespace TestProject1.Lib
 {
     public class PageLib
     {
-        private IWebDriver _driver;
-
-        public HomePage HomePage { get; }
-        public AuthenticationPage AuthenticationPage { get; }
-        public MyAccountPage MyAccountPage { get; }
-        public CreateAnAccountPage CreateAnAccountPage { get; }
+        private readonly IWebDriver _driver;
 
         public PageLib(IWebDriver driver)
         {
@@ -21,5 +16,9 @@ namespace TestProject1.Lib
             CreateAnAccountPage = new CreateAnAccountPage(_driver);
         }
 
+        public HomePage HomePage { get; }
+        public AuthenticationPage AuthenticationPage { get; }
+        public MyAccountPage MyAccountPage { get; }
+        public CreateAnAccountPage CreateAnAccountPage { get; }
     }
 }

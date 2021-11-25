@@ -6,6 +6,7 @@ using OpenQA.Selenium.Support.UI;
 using TechTalk.SpecFlow;
 using TestProject1.Lib;
 using TestProject1.Pages;
+using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 
@@ -14,37 +15,41 @@ namespace TestProject1.Features
     [Binding]
     public class LogIn_FeatureSteps : IDisposable
     {
-
+        private AppLib _app;
         private IWebDriver _driver;
         private WebDriverWait _webDriverWait;
-        private AppLib _app;
-        public AppLib App()
+
+        public void Dispose()
         {
-            return _app;
+            _driver.Quit();
         }
+
+        public AppLib App
+        {
+            get { return _app; }
+        }
+
         public void Setup()
         {
-            new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
+            new DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             _driver = new ChromeDriver();
             _webDriverWait = new WebDriverWait(_driver,
                 TimeSpan.FromSeconds(TestSettings.Timeout)
-
             );
             _app = new AppLib(_driver);
-
         }
 
         [Given(@"User is at the Home Page")]
         public void GivenUserIsAtTheHomePage()
         {
             Setup();
-            App().Flow().GoTo("http://automationpractice.com/");
+            App.Flow.GoTo("http://automationpractice.com/");
         }
 
         [Given(@"Navigate to LogIn Page")]
         public void GivenNavigateToLogInPage()
         {
-            App().Pages().HomePage.clickSignInButton();
+            App.Pages.HomePage.clickSignInButton();
         }
 
         [When(@"User enter UserName and Password")]
@@ -55,35 +60,35 @@ namespace TestProject1.Features
             var pass = dictionary["Password"];
             Console.Out.WriteLine($"'{name}'-'{pass}'");
 
-            App().Pages().AuthenticationPage.fillEmailAddress(name);
-            App().Pages().AuthenticationPage.fillPassword(pass);
+            App.Pages.AuthenticationPage.fillEmailAddress(name);
+            App.Pages.AuthenticationPage.fillPassword(pass);
         }
 
         [When(@"Click on the LogIn button")]
         public void WhenClickOnTheLogInButton()
         {
-            App().Pages().AuthenticationPage.clickSignInButton();
+            App.Pages.AuthenticationPage.clickSignInButton();
         }
 
         [Then(@"Successful LogIn message should display")]
         public void ThenSuccessfulLogInMessageShouldDisplay()
         {
-            string currentUrl = App().Flow().GetCurrentUrl();
-            string expectedUrl = MyAccountPage.URL;
+            var currentUrl = App.Flow.GetCurrentUrl();
+            var expectedUrl = MyAccountPage.URL;
             Assert.That(currentUrl, Is.EqualTo(expectedUrl));
         }
 
         [When(@"User LogOut from the Application")]
         public void WhenUserLogOutFromTheApplication()
         {
-            App().Pages().MyAccountPage.clickSignOutButton();
+            App.Pages.MyAccountPage.clickSignOutButton();
         }
 
         [Then(@"Successful LogOut message should display")]
         public void ThenSuccessfulLogOutMessageShouldDisplay()
         {
-            string currentUrl = App().Flow().GetCurrentUrl();
-            string expectedUrl = AuthenticationPage.URL;
+            var currentUrl = App.Flow.GetCurrentUrl();
+            var expectedUrl = AuthenticationPage.URL;
             Assert.That(currentUrl, Is.EqualTo(expectedUrl));
         }
 
@@ -92,11 +97,5 @@ namespace TestProject1.Features
         {
             _driver.Close();
         }
-        public void Dispose()
-        {
-            _driver.Quit();
-        }
-
-
     }
 }

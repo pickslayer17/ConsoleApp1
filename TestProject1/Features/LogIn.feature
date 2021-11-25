@@ -8,9 +8,9 @@ Scenario: (1) Successful Login with Valid Credentials
 	Given User is at the Home Page
 	And Navigate to LogIn Page
 	When User enter UserName and Password
-		| Key      | Value             |
-		| Username | qwerty10@test.ru  |
-		| Password | qscwdvefb43215432 |
+		| Username         | Password          |
+		| qwerty10@test.ru | qscwdvefb43215432 |
+		| qwerty9@test.ru  | qscwdvefb43215432 |
 	And Click on the LogIn button
 	Then Successful LogIn message should display
 #@Logout

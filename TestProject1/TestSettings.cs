@@ -9,7 +9,9 @@ namespace TestProject1
             SetDefaultValues();
         }
 
-        public static IConfiguration TestConfiguration { get; } = new ConfigurationBuilder().AddJsonFile("testsettings.json").Build();
+        public static IConfiguration TestConfiguration { get; } =
+            new ConfigurationBuilder().AddJsonFile("testsettings.json").Build();
+
         public static int Timeout { get; set; }
 
         public static void SetDefaultValues()

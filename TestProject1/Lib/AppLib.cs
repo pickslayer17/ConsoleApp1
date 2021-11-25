@@ -1,14 +1,13 @@
-﻿
-
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 
 namespace TestProject1.Lib
 {
     public class AppLib
     {
-        private IWebDriver _driver;
-        private PageLib _pages;
-        private FlowLib _flow;
+        private readonly IWebDriver _driver;
+        private readonly FlowLib _flow;
+        private readonly PageLib _pages;
+
         public AppLib(IWebDriver driver)
         {
             _driver = driver;
@@ -16,7 +15,13 @@ namespace TestProject1.Lib
             _flow = new FlowLib(_driver);
         }
 
-        public PageLib Pages() { return _pages; }
-        public FlowLib Flow() { return _flow; }
+        public PageLib Pages {
+            get { return _pages; }
+        }
+
+        public FlowLib Flow
+        {
+            get { return _flow; }
+        }
     }
 }
