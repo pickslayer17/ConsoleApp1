@@ -1,16 +1,17 @@
-﻿using System;
-using System.Configuration;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
+using System;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 using TestProject1.Lib;
 using WebDriverManager.DriverConfigs.Impl;
 using WebDriverManager.Helpers;
 
+
+[assembly: Parallelizable(ParallelScope.All)]
 namespace TestProject1.Tests
 {
-
     public abstract class AbstractBaseTest : IDisposable
     {
         public const int WAIT_FOR_ELEMENT_TIMEOUT = 30;
@@ -27,9 +28,9 @@ namespace TestProject1.Tests
         {
             new WebDriverManager.DriverManager().SetUpDriver(new ChromeConfig(), VersionResolveStrategy.MatchingBrowser);
             _driver = new ChromeDriver();
-            _webDriverWait = new WebDriverWait(_driver, 
-                TimeSpan.FromSeconds(WAIT_FOR_ELEMENT_TIMEOUT)
-                    
+            _webDriverWait = new WebDriverWait(_driver,
+                TimeSpan.FromSeconds(TestSettings.Timeout)
+
                 );
             _app = new AppLib(_driver);
 

@@ -5,9 +5,9 @@ namespace TestProject1.Tests
     class UserDataProvider
     {
 
-        public static User GetUserData(string path, UserParser userParser)
+        public static User GetUserData(UserParser userParser)
         {
-            return userParser.ReadUserData(path);
+            return userParser.ReadUserData();
         }
     }
 }

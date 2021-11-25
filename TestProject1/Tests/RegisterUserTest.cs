@@ -20,7 +20,7 @@ namespace TestProject1.Tests
             App().Pages().AuthenticationPage.clickCreateAnAccountButton();
             App().Pages().CreateAnAccountPage.WaitPageLoaded();
 
-            var user = UserDataProvider.GetUserData("json_user.txt", new JsonUserParser());
+            var user = UserDataProvider.GetUserData(new JsonUserParser());
             App().Pages().CreateAnAccountPage.FillGender(user.Gender);
             App().Pages().CreateAnAccountPage.FillCustomerFirstName(user.FirstName);
             App().Pages().CreateAnAccountPage.FillCustomerLastName(user.LastName);

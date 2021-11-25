@@ -1,8 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
+
 
 namespace TestProject1.Pages
 {
+
     public abstract class AbstractWebPage
     {
 
@@ -26,6 +30,12 @@ namespace TestProject1.Pages
         public void FillSelectByText(IWebElement select, string value)
         {
             new SelectElement(select).SelectByText(value);
+        }
+        public void WaitPageUrlEqualsToCurrent()
+        {
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(TestSettings.Timeout))
+                .Until(ExpectedConditions
+                    .ElementExists(By.ClassName("icon-home")));
         }
     }
 }

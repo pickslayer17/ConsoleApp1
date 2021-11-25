@@ -1,21 +1,24 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text.Json;
 
 namespace TestProject1.Data
 {
     public class JsonUserParser : UserParser
     {
-        public User ReadUserData(string path)
+        public const string FILE_NAME = "Resources\\json_user.txt";
+        
+        public User ReadUserData()
         {
-            string json = System.IO.File.ReadAllText(path).Trim();
+            string json = System.IO.File.ReadAllText(FILE_NAME);
             User restoredUser = JsonSerializer.Deserialize<User>(json);
             return restoredUser;
         }
 
-        public async void WriteUserData(string path, User user)
+        public async void WriteUserData(User user)
         {
             string json = JsonSerializer.Serialize<User>(user);
-            await File.WriteAllTextAsync(path, json);
+            await File.WriteAllTextAsync(FILE_NAME, json);
         }
     }
 }

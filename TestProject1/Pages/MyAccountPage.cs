@@ -1,7 +1,4 @@
-﻿using System;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+﻿using OpenQA.Selenium;
 
 namespace TestProject1.Pages
 {
@@ -12,12 +9,7 @@ namespace TestProject1.Pages
         {
         }
 
-        public void waitPageUrlEqualsToCurrent()
-        {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(30))
-                .Until(ExpectedConditions
-                    .ElementExists(By.ClassName("icon-home")));
-        }
+
 
 
     }

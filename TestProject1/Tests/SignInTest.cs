@@ -3,7 +3,7 @@ using System.Threading;
 using NUnit.Framework;
 using TestProject1.Pages;
 
-[assembly:Parallelizable(ParallelScope.All)]
+
 
 namespace TestProject1.Tests
 {
@@ -24,7 +24,7 @@ namespace TestProject1.Tests
             App().Pages().AuthenticationPage.fillPassword(password);
             App().Pages().AuthenticationPage.clickSignInButton();
 
-            App().Pages().MyAccountPage.waitPageUrlEqualsToCurrent();
+            App().Pages().MyAccountPage.WaitPageUrlEqualsToCurrent();
             string currentUrl = App().Flow().getCurrentUrl();
             string expectedUrl = MyAccountPage.PAGE_URL;
 

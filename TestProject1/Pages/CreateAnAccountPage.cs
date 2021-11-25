@@ -30,7 +30,7 @@ namespace TestProject1.Pages
 
         public new void WaitPageLoaded()
         {
-            new WebDriverWait(_driver, TimeSpan.FromSeconds(AbstractBaseTest.WAIT_FOR_ELEMENT_TIMEOUT))
+            new WebDriverWait(_driver, TimeSpan.FromSeconds(TestSettings.Timeout))
                 .Until(ExpectedConditions.ElementExists(By.Id("id_gender1")));
         }
 
