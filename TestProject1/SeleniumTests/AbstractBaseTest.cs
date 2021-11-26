@@ -17,25 +17,20 @@ namespace TestProject1.SeleniumTests
 {
     public abstract class AbstractBaseTest : IDisposable
     {
-        private AppLib _app;
         private IWebDriver _driver;
         private IDriverConfig _driverConfig;
         private WebDriverWait _webDriverWait;
-        public string BrowserName { get; set; } = "Chrome";
 
         public void Dispose()
         {
             _driver.Quit();
         }
 
-        public AppLib App
-        {
-            get { return _app; }
-        }
+        protected AppLib App { get; private set; }
 
-        private void SetupDriver(DriverName BrowserName)
+        private void SetupDriver(DriverName browserName)
         {
-            switch (BrowserName) 
+            switch (browserName) 
             {
                 case DriverName.CHROME:
                     _driverConfig = new ChromeConfig();
@@ -55,9 +50,9 @@ namespace TestProject1.SeleniumTests
         [SetUp]
         public void Setup()
         {
-            SetupDriver(DriverName.FIREFOX);
+            SetupDriver(DriverName.CHROME);
             _webDriverWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(TestSettings.Timeout));
-            _app = new AppLib(_driver);
+            App = new AppLib(_driver);
         }
 
         [TearDown]
